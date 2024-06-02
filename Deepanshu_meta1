@@ -1,0 +1,35 @@
+let nfts = [];
+
+function mintNFT(name, role, debutYear, totalRunsOrWickets) {
+    let newNFT = {
+        name: name,
+        role: role,
+        debutYear: debutYear,
+        totalRunsOrWickets: totalRunsOrWickets
+    };
+    nfts.push(newNFT);
+}
+
+function listNFTs() {
+    nfts.forEach((nft, index) => {
+        console.log(`NFT ${index + 1}:`);
+        console.log(`Name: ${nft.name}`);
+        console.log(`Role: ${nft.role}`);
+        console.log(`Debut Year: ${nft.debutYear}`);
+        console.log(`Total Runs/Wickets: ${nft.totalRunsOrWickets}`);
+        console.log("-------------------");
+    });
+}
+
+function getTotalSupply() {
+    return nfts.length;
+}
+
+mintNFT("Virat Kohli", "Batsman", 2008, 23726);
+mintNFT("Rohit Sharma", "Batsman", 2007, 16221);
+mintNFT("Jasprit Bumrah", "Bowler", 2016, "321 wickets");
+mintNFT("KL Rahul", "Batsman/Wicketkeeper", 2014, "7300 runs");
+mintNFT("Ravindra Jadeja", "All-rounder", 2009, "4822 runs and 474 wickets");
+
+listNFTs();
+console.log("Total number of NFTs minted:", getTotalSupply());
